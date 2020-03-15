@@ -1,0 +1,128 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminTemplate.master.cs" Inherits="LNPWI_DCS.Admin.AdminTemplate" %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head runat="server">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <asp:ContentPlaceHolder ID="HeadContentPlaceholder" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Faustina|Roboto+Condensed:700|Roboto:400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/library/css/main.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+     <!-- Data Tables -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+
+    <title>Lenfest Document Collection System</title>
+  </head>
+  <body>
+    <form id="form1" runat="server">
+        <header class="global-header">
+            <div class="container">
+              <div class="header-topbar">
+                <div class="header-logo-container d-none d-md-block">
+                  <a href="/Dashboard_User.aspx" rel="home"><img src="https://www.temple.edu/sites/all/modules/custom/tu_global/images/svg/temple-logo-t-box.svg" alt="" /><span class="sr-only">LNPWI Document Collection System</span></a>
+                </div>
+                <div class="header-content-container">
+                  <nav class="navbar navbar-expand secondary-navbar">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav secondary-nav ml-md-auto d-none d-md-flex">
+                        <li class="nav-item">
+                          <a class="nav-link" href="/Account/Login.aspx">Sign Out</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                  <div class="site-title-container">    
+                    <a href="/Dashboard_User.aspx" rel="home" class="site-title">
+                        <img src="https://www.temple.edu/sites/all/modules/custom/tu_global/images/svg/temple-logo-t-box.svg" alt="" class="site-title-logo d-md-none"/>
+                        <div class="site-title-text">
+                            <span class="site-title-text-small">Lenfest North Philadelphia Workforce Intiative</span> 
+                            Document Collection System
+                        </div>
+                    </a>   
+                  </div>
+                </div>
+              </div>
+            </div>
+            <nav class="navbar navbar-expand-md lnpwi-main-navbar">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i> Full Menu 
+              </button>
+
+              <div class="container">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav lnpwi-main-nav">
+                    <li class="nav-item"><a href="/Admin/AdminDashboard.aspx" class="nav-link">Dashboard</a></li>
+                    <li class="nav-item"><a href="/Admin/ManageOrganizations.aspx" class="nav-link">Organizations</a></li>
+                    <li class="nav-item"><a href="/Admin/ManageTasks.aspx" class="nav-link">Tasks</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            System <span class="sr-only"> - Toggle Menu</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="ManageUsers.aspx">Users</a>
+                            <a class="dropdown-item" href="ManageFiles.aspx">Files</a>
+                            <a class="dropdown-item" href="ManageYears.aspx">System Years</a>
+                            <a class="dropdown-item" href="ManageAnnouncements.aspx">Announcements</a>            
+                        </div>
+                    </li>
+                  </ul>
+                  <ul class="navbar-nav lnpwi-profile-nav ml-auto align-items-center">
+                    <li class="nav-item"><span class="nav-profile-name">Welcome, Shirley Moy</span></li>
+                    <li class="nav-item"><a href="/Account/Account_Settings.aspx" class="nav-link"><i class="fas fa-fw fa-user"></i></a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-fw fa-bell"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+        </header>
+        <div>
+            <asp:ContentPlaceHolder ID="MainContentPlaceholder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <footer>
+	    <div class="footer-bottom">
+		    <div class="container">
+			    <div class="row justify-content-between">
+				    <div class="col-md-3">
+					    <div class="footer-logo-container">
+						    <a href="https://temple.edu"><img src="/library/images/logo-white.png" class="footer-logo"></a>
+					    </div>
+				    </div>
+				    <div class="col-md-6">
+			            <address>
+				            <span><strong>Lenfest North Philadelphia Workforce Intiative</strong></span>
+				            <p>Ritter Annex, 4th Floor<br />1301 Cecil B. Moore Avenue, Room 481<br />Philadelphia, PA 19122</p>
+				            <p>(215) 204-3424<br /><a target="_blank" href="mailto:lnpwi@temple.edu" title="Email the LNPWI">lnpwi@temple.edu</a></p>
+			            </address>
+					    <span class="footer-text">Copyright &copy; Temple University 2019. All rights reserved.</span>
+				    </div>
+			    </div>
+		    </div>
+	    </div>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>  
+    <asp:ContentPlaceHolder ID="FooterScripts" runat="server">
+    </asp:ContentPlaceHolder>
+  </body>
+</html>
